@@ -20,7 +20,7 @@ class Cuddle : ICommand {
             m.user.idLong == ctx.author.idLong ->
                 ctx.send("Sorry to see you alone ;-;")
             else -> {
-                val res = NekosLife.retrieveImage("cuddle") ?: "*cuddles*"
+                val res = NekosLife.findImage("cuddle") ?: "*cuddles*"
                 ctx.send("**${m.user.name}**, you got a cuddle from **${ctx.author.name}**\n$res")
             }
         }

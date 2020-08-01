@@ -9,12 +9,12 @@ object NekosLife{
 
     private val END_URLS = ResourceUtil.readJson<HashMap<String?,String?>>("Resources/nekosLifeEndpoints.json")
 
-    fun retreiveImage(type: String, msg: String, failMsg: String){
+    fun findImage(type: String, msg: String, failMsg: String){
         val end=END_URLS.get(type)
         RequestUtil.get("https://api.nekos.dev/api/v3/images/sfw/$end").thenAccept {
             val res = it.json()?.getString("url")
-            return res
+            return res ?: ""
         }.thenException {  }
-        return (String?)null
+        return ""
     }
 }
