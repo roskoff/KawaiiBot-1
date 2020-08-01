@@ -1,9 +1,12 @@
+
 package me.alexflipnote.kawaiibot.commands
 
-import com.github.natanbc.weeb4j.image.NsfwFilter
-import me.alexflipnote.kawaiibot.KawaiiBot
+
 import me.alexflipnote.kawaiibot.extensions.clean
 import me.alexflipnote.kawaiibot.utils.Helpers
+import me.alexflipnote.kawaiibot.extensions.json
+import me.alexflipnote.kawaiibot.extensions.thenException
+import me.alexflipnote.kawaiibot.utils.RequestUtil
 import me.aurieh.ichigo.core.CommandContext
 import me.aurieh.ichigo.core.ICommand
 import me.aurieh.ichigo.core.annotations.Command
@@ -25,12 +28,10 @@ class Hug : ICommand {
                 ctx.channel.sendFile(Helpers.getImageStream("images/selfhug.gif"), "selfhug.gif", msg).queue()
             }
             else -> {
-                val api = KawaiiBot.wolkeApi
-                api.getRandomImage("hug", null, null, NsfwFilter.NO_NSFW, null).async { image ->
-                    ctx.sendEmbed {
-                        setDescription("**${m.effectiveName.clean()}**, you got a hug from **${ctx.author.name}**")
-                        setImage(image.url)
-                    }
+                        RequestUtil.get("https://nekos.life/api/v2/img/hug").thenAccept {
+                            val res = it.json()?.getString("url") ?: ""
+                            ctx.send("**${m.effectiveName.clean()}**, you got a hug from **${ctx.author.effectiveName.clean()}**\n${res}")
+                        }.thenException { ctx.send("I-I can't find any hug gifs... I'm sorry ;-;") }
                 }
             }
         }
