@@ -7,6 +7,8 @@ import me.aurieh.ichigo.core.CommandContext
 import me.aurieh.ichigo.core.ICommand
 import me.aurieh.ichigo.core.annotations.Command
 import net.dv8tion.jda.core.Permission
+import org.json.JSONArray
+import org.json.JSONObject
 
 @Command(description = "Call someone a baka", botPermissions = [Permission.MESSAGE_EMBED_LINKS])
 class Baka : ICommand {
