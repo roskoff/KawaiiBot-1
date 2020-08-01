@@ -25,7 +25,7 @@ class Baka : ICommand {
             else -> {
                 RequestUtil.get("https://api.nekos.dev/api/v3/images/sfw/gif/baka").thenAccept {
                     val res = it.json()?.getJSONObject("data")?.getJSONObject("response")?.getString("url") ?: ""
-                    ctx.send("**${ctx.author.name}**, called **${m.user.name}** a baka\n$res")
+                    ctx.send("**${ctx.author.name}**, called **${m.effectiveName.clean()}** a baka\n$res")
                 }.thenException { ctx.send("S-sorry, n-no bakas...") }
             }
         }

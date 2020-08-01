@@ -11,7 +11,7 @@ class Lewd : ICommand {
 
     override fun run(ctx: CommandContext) {
         //TODO: Implement lewd
-        ctx.send("Not re-implemented")
+        ctx.send("https://cdn.weeb.sh/images/H1UQaT_w-.png")
     }
 
 }
