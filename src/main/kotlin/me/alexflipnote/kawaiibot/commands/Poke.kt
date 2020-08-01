@@ -25,7 +25,7 @@ class Poke : ICommand {
                 ctx.send("You can't poke yourself... baka ;-;")
             else -> {
                 RequestUtil.get("https://api.nekos.dev/api/v3/images/sfw/gif/poke").thenAccept {
-                    val res = it.json()?.getString("url")
+                    val res = it.json()?.getJSONObject("data")?.getJSONObject("response")?.getString("url") ?: ""
                     ctx.send("**${m.user.name}**,you got a poke from **${ctx.author.name}**\n$res")
                 }.thenException { ctx.send("No poking!") }
             }

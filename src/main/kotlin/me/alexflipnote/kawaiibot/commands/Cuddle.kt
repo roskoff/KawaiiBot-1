@@ -22,7 +22,7 @@ class Cuddle : ICommand {
                 ctx.send("Sorry to see you alone ;-;")
             else -> {
                 RequestUtil.get("https://api.nekos.dev/api/v3/images/sfw/gif/cuddle").thenAccept {
-                    val res = it.json()?.getString("url")
+                    val res = it.json()?.getJSONObject("data")?.getJSONObject("response")?.getString("url") ?: ""
                     ctx.send("**${m.user.name}**, you got a cuddle from **${ctx.author.name}**\n$res")
                 }.thenException { ctx.send("S-sorry, n-no cuddles...") }
             }

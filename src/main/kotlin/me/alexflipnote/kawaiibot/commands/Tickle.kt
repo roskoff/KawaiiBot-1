@@ -23,7 +23,7 @@ class Tickle : ICommand {
         } else {
             //TODO: Implement tickle
             RequestUtil.get("https://api.nekos.dev/api/v3/images/sfw/gif/tickle").thenAccept {
-                val res = it.json()?.getString("url")
+                val res = it.json()?.getJSONObject("data")?.getJSONObject("response")?.getString("url") ?: ""
                 ctx.send("**${m.effectiveName.clean()}**, you got tickled by **${ctx.author.name}**\n$res")
             }.thenException { ctx.send("S-sorry, can't find tickles...") }
             

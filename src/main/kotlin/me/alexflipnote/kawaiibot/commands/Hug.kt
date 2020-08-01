@@ -29,7 +29,7 @@ class Hug : ICommand {
             }
             else -> {
                     RequestUtil.get("https://api.nekos.dev/api/v3/images/sfw/gif/hug").thenAccept {
-                        val res = it.json()?.getString("url") ?: ""
+                        val res = it.json()?.getJSONObject("data")?.getJSONObject("response")?.getString("url") ?: ""
                         ctx.send("**${m.effectiveName.clean()}**, you got a hug from **${ctx.author.name}**\n$res")
                     }.thenException { ctx.send("I-I can't find any hug gifs... I'm sorry ;-;") }
                 }
