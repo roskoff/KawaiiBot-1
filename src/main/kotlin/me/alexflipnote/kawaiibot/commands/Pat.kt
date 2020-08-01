@@ -3,6 +3,7 @@ package me.alexflipnote.kawaiibot.commands
 import me.alexflipnote.kawaiibot.KawaiiBot
 import me.alexflipnote.kawaiibot.extensions.json
 import me.alexflipnote.kawaiibot.extensions.sendFile
+import me.alexflipnote.kawaiibot.extensions.thenException
 import me.alexflipnote.kawaiibot.utils.Helpers
 import me.alexflipnote.kawaiibot.utils.RequestUtil
 import me.aurieh.ichigo.core.CommandContext
