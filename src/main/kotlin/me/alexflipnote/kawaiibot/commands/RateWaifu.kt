@@ -27,7 +27,7 @@ class RateWaifu : ICommand {
             m.user.idLong == ctx.author.idLong ->
                 ctx.send("I'd rate you a **${r.nextInt(90 - 1) + 11} / 100**")
             else -> {
-                    ctx.send("I'd rate ${m.effectiveName.clean()} a **${r.nextInt(100 - 1) + 1} / 100**")
+                    ctx.send("I'd rate `${m.effectiveName.clean()}` a **${r.nextInt(100 - 1) + 1} / 100**")
                 }
             }
         }
