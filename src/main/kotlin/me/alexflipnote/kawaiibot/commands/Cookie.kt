@@ -11,7 +11,7 @@ class Cookie : ICommand {
         val member = ctx.args.nextMemberOrNull()
                 ?: return ctx.send("Why are you trying to give a cookie to thin air?")
 
-        val builder = StringBuilder("**${member.user.name}**, you got a \uD83C\uDF6A from **${ctx.author.name}**")
+        val builder = StringBuilder("**${member.effectiveName.clean()}**, you got a \uD83C\uDF6A from **${ctx.author.name}**")
         val reason = ctx.args.collect()
         if (reason.isEmpty())
             builder.append("\n")

@@ -21,7 +21,7 @@ class HandHold : ICommand {
                 ctx.send("Sorry to see you alone ;-;")
             else -> {
                 //TODO: Implement handholding (oh no how lewd)
-                ctx.send("**${m.user.name}**, **${ctx.author.name}** is holding your hand")
+                ctx.send("**${m.effectiveName.clean()}**, **${ctx.author.name}** is holding your hand")
             }
         }
     }
