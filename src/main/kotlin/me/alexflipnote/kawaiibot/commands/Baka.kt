@@ -22,7 +22,7 @@ class Baka : ICommand {
                 ctx.channel.sendFile(Helpers.getImageStream("images/selfbaka.jpg"), "selfbaka.jpg").queue()
             else -> {
                 val res = NekosLife.retrieveImage("baka") ?: "B-BAKA!"
-                ctx.send(**${ctx.author.name}**, called **${m.user.name}** a baka\n$res")
+                ctx.send("**${ctx.author.name}**, called **${m.user.name}** a baka\n$res")
             }
         }
     }
