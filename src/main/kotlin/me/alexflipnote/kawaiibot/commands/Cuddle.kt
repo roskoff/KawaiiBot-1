@@ -1,6 +1,6 @@
 package me.alexflipnote.kawaiibot.commands
 
-import com.github.natanbc.weeb4j.image.NsfwFilter
+import me.alexflipnote.kawaiibot.utils.NekosLife
 import me.alexflipnote.kawaiibot.KawaiiBot
 import me.aurieh.ichigo.core.CommandContext
 import me.aurieh.ichigo.core.ICommand
@@ -20,10 +20,8 @@ class Cuddle : ICommand {
             m.user.idLong == ctx.author.idLong ->
                 ctx.send("Sorry to see you alone ;-;")
             else -> {
-                RequestUtil.get("https://nekos.life/api/v2/img/cuddle").thenAccept {
-                    val res = it.json()?.getString("url") ?: ""
-                    ctx.send("**${m.user.name}**, you got a cuddle from **${ctx.author.name}**$res")
-                }.thenException { ctx.send("I-I can't find any cuddle gifs... I'm sorry ;-;") }
+                val res = NekosLife.retrieveImage("cuddle") ?: "*cuddles*"
+                ctx.send("**${m.user.name}**, you got a cuddle from **${ctx.author.name}**\n$res")
             }
         }
     }

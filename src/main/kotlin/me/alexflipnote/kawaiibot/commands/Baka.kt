@@ -1,6 +1,6 @@
 package me.alexflipnote.kawaiibot.commands
 
-
+import me.alexflipnote.kawaiibot.utils.NekosLife
 import me.alexflipnote.kawaiibot.KawaiiBot
 import me.alexflipnote.kawaiibot.utils.Helpers
 import me.aurieh.ichigo.core.CommandContext

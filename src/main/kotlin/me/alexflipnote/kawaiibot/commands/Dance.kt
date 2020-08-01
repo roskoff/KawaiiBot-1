@@ -1,6 +1,5 @@
 package me.alexflipnote.kawaiibot.commands
 
-import com.github.natanbc.weeb4j.image.NsfwFilter
 import me.alexflipnote.kawaiibot.KawaiiBot
 import me.aurieh.ichigo.core.CommandContext
 import me.aurieh.ichigo.core.ICommand
