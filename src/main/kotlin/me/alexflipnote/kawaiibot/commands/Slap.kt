@@ -5,6 +5,7 @@ import me.alexflipnote.kawaiibot.utils.Helpers
 import me.alexflipnote.kawaiibot.utils.RequestUtil
 import me.alexflipnote.kawaiibot.extensions.json
 import me.alexflipnote.kawaiibot.extensions.thenException
+import me.alexflipnote.kawaiibot.extensions.clean
 import me.aurieh.ichigo.core.CommandContext
 import me.aurieh.ichigo.core.ICommand
 import me.aurieh.ichigo.core.annotations.Command

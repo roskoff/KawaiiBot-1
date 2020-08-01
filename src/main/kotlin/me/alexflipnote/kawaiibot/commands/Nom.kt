@@ -1,5 +1,6 @@
 package me.alexflipnote.kawaiibot.commands
 
+import me.alexflipnote.kawaiibot.extensions.clean
 import me.alexflipnote.kawaiibot.KawaiiBot
 import me.aurieh.ichigo.core.CommandContext
 import me.aurieh.ichigo.core.ICommand
