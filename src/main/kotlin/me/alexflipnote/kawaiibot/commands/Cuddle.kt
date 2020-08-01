@@ -2,6 +2,7 @@ package me.alexflipnote.kawaiibot.commands
 
 import me.alexflipnote.kawaiibot.extensions.json
 import me.alexflipnote.kawaiibot.utils.NekosLife
+import me.alexflipnote.kawaiibot.utils.RequestUtil
 import me.alexflipnote.kawaiibot.extensions.thenException
 import me.aurieh.ichigo.core.CommandContext
 import me.aurieh.ichigo.core.ICommand
@@ -21,7 +22,7 @@ class Cuddle : ICommand {
             m.user.idLong == ctx.author.idLong ->
                 ctx.send("Sorry to see you alone ;-;")
             else -> {
-                NekosLife.findImage("baka").thenAccept {
+                RequestUtil.get("https://api.nekos.dev/api/v3/images/sfw/gif/cuddle").thenAccept {
                     val res = it.json()?.getString("url")
                     ctx.send("**${m.user.name}**, you got a cuddle from **${ctx.author.name}**\n$res")
                 }.thenException { ctx.send("S-sorry, n-no cuddles...") }

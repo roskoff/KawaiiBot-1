@@ -21,8 +21,10 @@ class Poke : ICommand {
             m.user.idLong == ctx.author.idLong ->
                 ctx.send("You can't poke yourself... baka ;-;")
             else -> {
-                //Implement poke
-                ctx.send("**${m.effectiveName.clean()}**, you got a poke from **${ctx.author.name}**")
+                RequestUtil.get("https://api.nekos.dev/api/v3/images/sfw/gif/poke").thenAccept {
+                    val res = it.json()?.getString("url")
+                    ctx.send("**${m.user.name}**,you got a poke from **${ctx.author.name}**\n$res")
+                }.thenException { ctx.send("No poking!") }
             }
         }
     }

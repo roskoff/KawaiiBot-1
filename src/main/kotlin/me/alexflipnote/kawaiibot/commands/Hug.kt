@@ -28,10 +28,10 @@ class Hug : ICommand {
                 ctx.channel.sendFile(Helpers.getImageStream("images/selfhug.gif"), "selfhug.gif", msg).queue()
             }
             else -> {
-                        RequestUtil.get("https://nekos.life/api/v2/img/hug").thenAccept {
-                            val res = it.json()?.getString("url") ?: ""
-                            ctx.send("**${m.effectiveName.clean()}**, you got a hug from **${ctx.author.name}**\n$res")
-                        }.thenException { ctx.send("I-I can't find any hug gifs... I'm sorry ;-;") }
+                    RequestUtil.get("https://api.nekos.dev/api/v3/images/sfw/gif/hug").thenAccept {
+                        val res = it.json()?.getString("url") ?: ""
+                        ctx.send("**${m.effectiveName.clean()}**, you got a hug from **${ctx.author.name}**\n$res")
+                    }.thenException { ctx.send("I-I can't find any hug gifs... I'm sorry ;-;") }
                 }
             }
         }

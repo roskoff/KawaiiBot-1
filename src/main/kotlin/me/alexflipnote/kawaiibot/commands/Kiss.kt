@@ -20,7 +20,11 @@ class Kiss : ICommand {
                 ctx.send("Sorry to see you alone ;-;")
             else -> {
                 //TODO: Implement kiss
-                ctx.send("**${m.user.name}**,you got a kiss from **${ctx.author.name}**")
+                RequestUtil.get("https://api.nekos.dev/api/v3/images/sfw/gif/kiss").thenAccept {
+                    val res = it.json()?.getString("url")
+                    ctx.send("**${m.user.name}**,you got a kiss from **${ctx.author.name}**\n$res")
+                }.thenException { ctx.send("S-sorry, no kisses...") }
+                
             }
         }
     }

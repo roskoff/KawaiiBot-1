@@ -22,8 +22,10 @@ class Pat : ICommand {
                 ctx.channel.sendFile("Don't be like that ;-;", Helpers.getImageStream("images/selfpat.gif"), "selfpat.gif").queue()
             }
             else -> {
-                //TODO: Implement pat
-                ctx.send("**${m.user.name}**, you got a pat from **${ctx.author.name}**")
+                RequestUtil.get("https://api.nekos.dev/api/v3/images/sfw/gif/pat").thenAccept {
+                    val res = it.json()?.getString("url")
+                    ctx.send("**${m.user.name}**,you got a pat from **${ctx.author.name}**\n$res")
+                }.thenException { ctx.send("Sorry, couldn't locate headpats...") }
             }
         }
     }

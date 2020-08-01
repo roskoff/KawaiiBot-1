@@ -20,8 +20,10 @@ class Slap : ICommand {
             m.user.idLong == ctx.author.idLong ->
                 ctx.channel.sendFile(Helpers.getImageStream("images/butwhy.gif"), "butwhy.gif").queue()
             else -> {
-                //TODO: Implement
-                ctx.send("**${m.user.name}**, you got a slap from **${ctx.author.name}**")
+                RequestUtil.get("https://api.nekos.dev/api/v3/images/sfw/gif/slap").thenAccept {
+                    val res = it.json()?.getString("url")
+                    ctx.send("**${m.user.name}**,you got a slap from **${ctx.author.name}**\n$res")
+                }.thenException { ctx.send("No slaps!") }
             }
         }
     }
