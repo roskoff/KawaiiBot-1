@@ -24,7 +24,7 @@ class Baka : ICommand {
                 ctx.channel.sendFile(Helpers.getImageStream("images/selfbaka.jpg"), "selfbaka.jpg").queue()
             else -> {
                 RequestUtil.get("https://api.nekos.dev/api/v3/images/sfw/gif/baka").thenAccept {
-                    val res = it.json()?.getJsonObject("data")?.getJsonObject("response")?.getString("url")
+                    val res = it.json()?.getJSONObject("data")?.getJSONObject("response")?.getString("url")
                     ctx.send("**${ctx.author.name}**, called **${m.user.name}** a baka\n$res")
                 }.thenException { ctx.send("S-sorry, n-no bakas...") }
             }
