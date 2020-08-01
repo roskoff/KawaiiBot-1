@@ -21,13 +21,8 @@ class Slap : ICommand {
             m.user.idLong == ctx.author.idLong ->
                 ctx.channel.sendFile(Helpers.getImageStream("images/butwhy.gif"), "butwhy.gif").queue()
             else -> {
-                val api = KawaiiBot.wolkeApi
-                api.getRandomImage("slap", null, null, NsfwFilter.NO_NSFW, null).async { image ->
-                    ctx.sendEmbed {
-                        setDescription("**${m.user.name}**, you got a slap from **${ctx.author.name}**")
-                        setImage(image.url)
-                    }
-                }
+                //TODO: Implement
+                ctx.send("**${m.user.name}**, you got a slap from **${ctx.author.name}**")
             }
         }
     }

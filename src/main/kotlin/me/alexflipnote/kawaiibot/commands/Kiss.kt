@@ -20,13 +20,8 @@ class Kiss : ICommand {
             m.user.idLong == ctx.author.idLong ->
                 ctx.send("Sorry to see you alone ;-;")
             else -> {
-                val api = KawaiiBot.wolkeApi
-                api.getRandomImage("kiss", null, null, NsfwFilter.NO_NSFW, null).async { image ->
-                    ctx.sendEmbed {
-                        setDescription("**${m.user.name}**,you got a kiss from **${ctx.author.name}**")
-                        setImage(image.url)
-                    }
-                }
+                //TODO: Implement kiss
+                ctx.send("**${m.user.name}**,you got a kiss from **${ctx.author.name}**")
             }
         }
     }

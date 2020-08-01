@@ -15,13 +15,7 @@ class Dab : ICommand {
 
     override fun run(ctx: CommandContext) {
         val comment = Helpers.chooseRandom(comments)
-
-        val api = KawaiiBot.wolkeApi
-        api.getRandomImage("dab", null, null, NsfwFilter.NO_NSFW, null).async { image ->
-            ctx.sendEmbed {
-                setDescription("**$comment**")
-                setImage(image.url)
-            }
-        }
+        //TODO: Implement dab
+        ctx.send(comment)
     }
 }

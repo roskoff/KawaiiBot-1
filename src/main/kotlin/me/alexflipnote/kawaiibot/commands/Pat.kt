@@ -23,13 +23,8 @@ class Pat : ICommand {
                 ctx.channel.sendFile("Don't be like that ;-;", Helpers.getImageStream("images/selfpat.gif"), "selfpat.gif").queue()
             }
             else -> {
-                val api = KawaiiBot.wolkeApi
-                api.getRandomImage("pat", null, null, NsfwFilter.NO_NSFW, null).async { image ->
-                    ctx.sendEmbed {
-                        setDescription("**${m.user.name}**, you got a pat from **${ctx.author.name}**")
-                        setImage(image.url)
-                    }
-                }
+                //TODO: Implement pat
+                ctx.send("**${m.user.name}**, you got a pat from **${ctx.author.name}**")
             }
         }
     }

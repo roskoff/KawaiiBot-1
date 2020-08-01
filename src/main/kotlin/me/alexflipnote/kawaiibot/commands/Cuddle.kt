@@ -20,13 +20,10 @@ class Cuddle : ICommand {
             m.user.idLong == ctx.author.idLong ->
                 ctx.send("Sorry to see you alone ;-;")
             else -> {
-                val api = KawaiiBot.wolkeApi
-                api.getRandomImage("cuddle", null, null, NsfwFilter.NO_NSFW, null).async { image ->
-                    ctx.sendEmbed {
-                        setDescription("**${m.user.name}**, you got a cuddle from **${ctx.author.name}**")
-                        setImage(image.url)
-                    }
-                }
+                RequestUtil.get("https://nekos.life/api/v2/img/cuddle").thenAccept {
+                    val res = it.json()?.getString("url") ?: ""
+                    ctx.send("**${m.user.name}**, you got a cuddle from **${ctx.author.name}**$res")
+                }.thenException { ctx.send("I-I can't find any cuddle gifs... I'm sorry ;-;") }
             }
         }
     }

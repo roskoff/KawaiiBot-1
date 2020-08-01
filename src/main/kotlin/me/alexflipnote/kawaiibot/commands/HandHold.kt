@@ -21,13 +21,8 @@ class HandHold : ICommand {
             m.user.idLong == ctx.author.idLong ->
                 ctx.send("Sorry to see you alone ;-;")
             else -> {
-                val api = KawaiiBot.wolkeApi
-                api.getRandomImage("handholding", null, null, NsfwFilter.NO_NSFW, null).async { image ->
-                    ctx.sendEmbed {
-                        setDescription("**${m.user.name}**, **${ctx.author.name}** is holding your hand")
-                        setImage(image.url)
-                    }
-                }
+                //TODO: Implement handholding (oh no how lewd)
+                ctx.send("**${m.user.name}**, **${ctx.author.name}** is holding your hand")
             }
         }
     }

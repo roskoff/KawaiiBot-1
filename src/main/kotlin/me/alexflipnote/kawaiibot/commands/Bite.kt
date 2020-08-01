@@ -24,13 +24,8 @@ class Bite : ICommand {
                 ctx.send("W-Why would you want to bite yourself...?")
             }
             else -> {
-                val api = KawaiiBot.wolkeApi
-                api.getRandomImage("bite", null, null, NsfwFilter.NO_NSFW, null).async { image ->
-                    ctx.sendEmbed {
-                        setDescription("**${m.effectiveName.clean()}**, you were bitten by **${ctx.author.name}**")
-                        setImage(image.url)
-                    }
-                }
+                //TODO: implement bite
+                ctx.send("**${m.effectiveName.clean()}**, you were bitten by **${ctx.author.name}**")
             }
         }
     }

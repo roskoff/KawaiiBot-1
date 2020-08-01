@@ -11,12 +11,8 @@ import net.dv8tion.jda.core.Permission
 class Cry : ICommand {
 
     override fun run(ctx: CommandContext) {
-        val api = KawaiiBot.wolkeApi
-        api.getRandomImage("cry", null, null, NsfwFilter.NO_NSFW, null).async { image ->
-            ctx.sendEmbed {
-                setImage(image.url)
-            }
-        }
+        //TODO: Implement cry
+        ctx.send("Not re-implemented")
     }
 
 }

@@ -11,12 +11,8 @@ import net.dv8tion.jda.core.Permission
 class Blush : ICommand {
 
     override fun run(ctx: CommandContext) {
-        val api = KawaiiBot.wolkeApi
-        api.getRandomImage("blush", null, null, NsfwFilter.NO_NSFW, null).async { image ->
-            ctx.sendEmbed {
-                setImage(image.url)
-            }
-        }
+        //TODO: Implement blush
+        ctx.send("Not re-implemented")
     }
 
 }

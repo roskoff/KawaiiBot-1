@@ -19,13 +19,8 @@ class Tickle : ICommand {
         } else if (m.user.idLong == ctx.jda.selfUser.idLong) {
             ctx.send("*giggles* ❤")
         } else {
-            val api = KawaiiBot.wolkeApi
-            api.getRandomImage("tickle", null, null, NsfwFilter.NO_NSFW, null).async { image ->
-                ctx.sendEmbed {
-                    setDescription("**${m.effectiveName.clean()}**, you got tickled by **${ctx.author.name}**")
-                    setImage(image.url)
-                }
-            }
+            //TODO: Implement tickle
+            ctx.send("**${m.effectiveName.clean()}**, you got tickled by **${ctx.author.name}**")
         }
     }
 }

@@ -22,13 +22,8 @@ class Poke : ICommand {
             m.user.idLong == ctx.author.idLong ->
                 ctx.send("You can't poke yourself... baka ;-;")
             else -> {
-                val api = KawaiiBot.wolkeApi
-                api.getRandomImage("poke", null, null, NsfwFilter.NO_NSFW, null).async { image ->
-                    ctx.sendEmbed {
-                        setDescription("**${m.effectiveName.clean()}**, you got a poke from **${ctx.author.name}**")
-                        setImage(image.url)
-                    }
-                }
+                //Implement poke
+                ctx.send("**${m.effectiveName.clean()}**, you got a poke from **${ctx.author.name}**")
             }
         }
     }

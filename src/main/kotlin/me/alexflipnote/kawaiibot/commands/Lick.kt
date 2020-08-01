@@ -26,14 +26,8 @@ class Lick : ICommand {
             m.user.idLong == ctx.author.idLong ->
                 ctx.channel.sendFile(Helpers.getImageStream("images/selflick.gif"), "selflick.gif").queue()
             else -> {
-                val api = KawaiiBot.wolkeApi
-                api.getRandomImage("lick", null, null, NsfwFilter.NO_NSFW, null).async { image ->
-                    ctx.sendEmbed {
-                        setColor(KawaiiBot.embedColor)
-                        setDescription("**${m.effectiveName.clean()}**, was licked by **${ctx.author.name}**")
-                        setImage(image.url)
-                    }
-                }
+                //TODO: Implement lick
+                ctx.send("**${m.effectiveName.clean()}**, was licked by **${ctx.author.name}**")
             }
         }
     }

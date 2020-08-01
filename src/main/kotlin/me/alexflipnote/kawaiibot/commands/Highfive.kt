@@ -25,13 +25,8 @@ class Highfive : ICommand {
                 ctx.channel.sendFile(Helpers.getImageStream("images/selffive.gif"), "selffive.gif", msg).queue()
             }
             else -> {
-                val api = KawaiiBot.wolkeApi
-                api.getRandomImage("highfive", null, null, NsfwFilter.NO_NSFW, null).async { image ->
-                    ctx.sendEmbed {
-                        setDescription("**${m.effectiveName.clean()}**, you got a high-five from **${ctx.author.name}**")
-                        setImage(image.url)
-                    }
-                }
+                //TODO: Implement
+                ctx.send("**${m.effectiveName.clean()}**, you got a high-five from **${ctx.author.name}**")
             }
         }
     }

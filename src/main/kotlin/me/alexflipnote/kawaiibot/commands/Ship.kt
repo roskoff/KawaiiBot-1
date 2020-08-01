@@ -10,6 +10,7 @@ import net.dv8tion.jda.core.Permission
 
 @Command(description = "Make a lovely ship <3", guildOnly = true, botPermissions = [Permission.MESSAGE_ATTACH_FILES])
 class Ship : ICommand { // TODO: convert to AbstractAPICommand
+    //this is one mess I don't want to touch
     override fun run(ctx: CommandContext) {
         val first = ctx.args.nextMemberOrNull()?.user ?: return ctx.send("You must select 2 members")
         val second = ctx.args.nextMemberOrNull()?.user ?: return ctx.send("You must select 2 members")
