@@ -1,6 +1,5 @@
 package me.alexflipnote.kawaiibot.commands
 
-import com.github.natanbc.weeb4j.image.NsfwFilter
 import me.alexflipnote.kawaiibot.KawaiiBot
 import me.aurieh.ichigo.core.CommandContext
 import me.aurieh.ichigo.core.ICommand
@@ -11,12 +10,8 @@ import net.dv8tion.jda.core.Permission
 class Lewd : ICommand {
 
     override fun run(ctx: CommandContext) {
-        val api = KawaiiBot.wolkeApi
-        api.getRandomImage("lewd", null, null, NsfwFilter.NO_NSFW, null).async { image ->
-            ctx.sendEmbed {
-                setImage(image.url)
-            }
-        }
+        //TODO: Implement lewd
+        ctx.send("https://cdn.weeb.sh/images/H1UQaT_w-.png")
     }
 
 }

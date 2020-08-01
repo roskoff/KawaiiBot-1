@@ -12,9 +12,9 @@ class About : ICommand {
     override fun run(ctx: CommandContext) {
         ctx.sendEmbed {
             setTitle("ℹ KawaiiBot v${KawaiiBot.version}")
-            addField("Developers", "AlexFlipnote, devoxin, Yvan, Aurieh, stupid cat & william", false)
+            addField("Developers", "AlexFlipnote, devoxin, Yvan, Aurieh, stupid cat & william | Modified for NieR: Automata speedrun discord by hitoccchi", false)
             addField("Library", "JDA ${JDAInfo.VERSION}", true)
-            addField("My Server!", "https://discord.gg/wGwgWJW", true)
+            addField("My Server!", "https://discord.nierspeedrun.com", true)
             setThumbnail(ctx.jda.selfUser.effectiveAvatarUrl)
         }
     }

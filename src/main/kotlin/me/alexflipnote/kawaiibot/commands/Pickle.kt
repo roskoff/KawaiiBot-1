@@ -1,5 +1,6 @@
 package me.alexflipnote.kawaiibot.commands
 
+import me.alexflipnote.kawaiibot.extensions.clean
 import me.aurieh.ichigo.core.CommandContext
 import me.aurieh.ichigo.core.ICommand
 import me.aurieh.ichigo.core.annotations.Command
@@ -22,7 +23,7 @@ class Pickle : ICommand {
         } else {
             random.setSeed(m.user.idLong)
             val size = dpFormatter.format(random.nextInt(50).toDouble() / 1.17)
-            ctx.send("**${m.user.name}'s** pickle size is **${size}cm** \uD83C\uDF80")
+            ctx.send("**${m.effectiveName.clean()}'s** pickle size is **${size}cm** \uD83C\uDF80")
         }
     }
 }

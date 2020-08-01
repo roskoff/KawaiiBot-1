@@ -1,7 +1,9 @@
 package me.alexflipnote.kawaiibot.commands
 
-import com.github.natanbc.weeb4j.image.NsfwFilter
 import me.alexflipnote.kawaiibot.KawaiiBot
+import me.alexflipnote.kawaiibot.utils.RequestUtil
+import me.alexflipnote.kawaiibot.extensions.json
+import me.alexflipnote.kawaiibot.extensions.thenException
 import me.alexflipnote.kawaiibot.extensions.clean
 import me.aurieh.ichigo.core.CommandContext
 import me.aurieh.ichigo.core.ICommand
@@ -22,13 +24,10 @@ class Poke : ICommand {
             m.user.idLong == ctx.author.idLong ->
                 ctx.send("You can't poke yourself... baka ;-;")
             else -> {
-                val api = KawaiiBot.wolkeApi
-                api.getRandomImage("poke", null, null, NsfwFilter.NO_NSFW, null).async { image ->
-                    ctx.sendEmbed {
-                        setDescription("**${m.effectiveName.clean()}**, you got a poke from **${ctx.author.name}**")
-                        setImage(image.url)
-                    }
-                }
+                RequestUtil.get("https://api.nekos.dev/api/v3/images/sfw/gif/poke").thenAccept {
+                    val res = it.json()?.getJSONObject("data")?.getJSONObject("response")?.getString("url") ?: ""
+                    ctx.send("**${m.effectiveName.clean()}**,you got a poke from **${ctx.author.name}**\n$res")
+                }.thenException { ctx.send("No poking!") }
             }
         }
     }

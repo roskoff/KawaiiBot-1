@@ -1,7 +1,5 @@
 package me.alexflipnote.kawaiibot
 
-import com.github.natanbc.weeb4j.TokenType
-import com.github.natanbc.weeb4j.Weeb4J
 import me.alexflipnote.kawaiibot.utils.CommandClasspathScanner
 import me.alexflipnote.kawaiibot.utils.SpeedyBoi
 import me.aurieh.ichigo.core.CommandHandler
@@ -20,7 +18,8 @@ object KawaiiBot {
 
     const val version = "3.2.1"
     private val bootTime = System.currentTimeMillis()
-    val developerIds = setOf(86477779717066752L, 180093157554388993L, 261912303132344320L, 115076505549144067L)
+    //                          hitoccchi               rodg                myth
+    val developerIds = setOf(173529942431236096L, 184038953920233472L, 133736400385212416L)
     var LOG = LoggerFactory.getLogger("KawaiiBot")
 
     val config = Properties()
@@ -28,7 +27,6 @@ object KawaiiBot {
     lateinit var shardManager: ShardManager
     lateinit var commandHandler: CommandHandler
     lateinit var httpClient: OkHttpClient
-    lateinit var wolkeApi: Weeb4J
     lateinit var embedColor: Color
 
     var otherCommandUsage = 0
@@ -49,16 +47,7 @@ object KawaiiBot {
         }
 
         val defaultPrefix = config.getProperty("prefix")
-        val wolkeApiKey = config.getProperty("wolke")
         embedColor = Color.decode(config.getProperty("color", "0xC29FAF"))
-
-        if (wolkeApiKey != null) {
-            LOG.info("Wolke API key present, enabling Weeb4J...")
-            wolkeApi = Weeb4J.Builder()
-                    .setToken(TokenType.WOLKE, wolkeApiKey)
-                    .setUserAgent("KawaiiBot/$version (https://kawaiibot.xyz)")
-                    .build()
-        }
 
         val shardIdentifyDelay = config.getProperty("shardidentifydelay", "5000").toLong()
 

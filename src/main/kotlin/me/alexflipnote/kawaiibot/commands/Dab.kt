@@ -1,7 +1,6 @@
 package me.alexflipnote.kawaiibot.commands
 
 
-import com.github.natanbc.weeb4j.image.NsfwFilter
 import me.alexflipnote.kawaiibot.KawaiiBot
 import me.alexflipnote.kawaiibot.utils.Helpers
 import me.aurieh.ichigo.core.CommandContext
@@ -15,13 +14,7 @@ class Dab : ICommand {
 
     override fun run(ctx: CommandContext) {
         val comment = Helpers.chooseRandom(comments)
-
-        val api = KawaiiBot.wolkeApi
-        api.getRandomImage("dab", null, null, NsfwFilter.NO_NSFW, null).async { image ->
-            ctx.sendEmbed {
-                setDescription("**$comment**")
-                setImage(image.url)
-            }
-        }
+        //TODO: Implement dab
+        ctx.send(comment)
     }
 }
