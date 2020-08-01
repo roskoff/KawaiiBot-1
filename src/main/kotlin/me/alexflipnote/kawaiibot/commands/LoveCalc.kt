@@ -32,7 +32,7 @@ class LoveCalc : ICommand {
 
         ctx.sendEmbed {
             setTitle("❤ Love Calculator ❤")
-            setDescription("Love between ${first.effectiveName.clean()} and ${second.effectiveName.clean()} is at **$percent%**")
+            setDescription("Love between ${first.name)} and ${second.name} is at **$percent%**")
 
             if (percent == 100) {
                 appendDescription("\n`Love is in the air\nOh, oh, oh, oh, uh`")

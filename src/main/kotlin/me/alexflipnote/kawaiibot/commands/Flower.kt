@@ -21,7 +21,7 @@ class Flower : ICommand {
                 ctx.send("*Awww* ❤")
             else -> {
                 val msg = MessageBuilder()
-                        .setContent("**${m.user.name}** you got a ${Helpers.chooseRandom(flowers)} from **${ctx.author.name}**")
+                        .setContent("**${m.effectiveName.clean()}** you got a ${Helpers.chooseRandom(flowers)} from **${ctx.author.name}**")
                         .build()
                 ctx.channel
                         .sendFile(Helpers.getImageStream("images/flower.gif"), "flower.gif", msg)

@@ -25,7 +25,7 @@ class Slap : ICommand {
             else -> {
                 RequestUtil.get("https://api.nekos.dev/api/v3/images/sfw/gif/slap").thenAccept {
                     val res = it.json()?.getJSONObject("data")?.getJSONObject("response")?.getString("url") ?: ""
-                    ctx.send("**${m.user.name}**,you got a slap from **${ctx.author.name}**\n$res")
+                    ctx.send("**${m.effectiveName.clean()}**,you got a slap from **${ctx.author.name}**\n$res")
                 }.thenException { ctx.send("No slaps!") }
             }
         }

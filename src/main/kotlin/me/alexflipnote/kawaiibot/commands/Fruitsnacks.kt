@@ -12,6 +12,6 @@ class Fruitsnacks : ICommand {
     override fun run(ctx: CommandContext) {
         val member = ctx.args.asMember ?: return ctx.send("Are you trying to give a fruit to the air...?")
         val fruit = Helpers.chooseRandom(fruits)
-        ctx.send("**${member.user.name}** You got a $fruit from ${ctx.author.name}\n\n(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ $fruit")
+        ctx.send("**${member.effectiveName.clean()}** You got a $fruit from ${ctx.author.name}\n\n(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ $fruit")
     }
 }

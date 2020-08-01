@@ -21,7 +21,7 @@ class Nom : ICommand {
                 ctx.send("Sorry to see you alone ;-;")
             else -> {
                 //TODO: Implement nom
-                ctx.send("**${m.user.name}**, you got a nom from **${ctx.author.name}**")
+                ctx.send("**${m.effectiveName.clean()}**, you got a nom from **${ctx.author.name}**")
             }
         }
     }

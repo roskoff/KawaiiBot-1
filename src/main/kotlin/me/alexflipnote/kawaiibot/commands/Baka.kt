@@ -1,6 +1,7 @@
 package me.alexflipnote.kawaiibot.commands
 
 import me.alexflipnote.kawaiibot.extensions.json
+import me.alexflipnote.kawaiibot.extensions.clean
 import me.alexflipnote.kawaiibot.utils.Helpers
 import me.alexflipnote.kawaiibot.utils.RequestUtil
 import me.alexflipnote.kawaiibot.extensions.thenException
