@@ -23,11 +23,11 @@ class RateWaifu : ICommand {
             m == null ->
                 ctx.send("I'd rate `${StringUtil.cleanerContent(ctx.argString)}` a **${r.nextInt(100 - 1) + 1} / 100**")
             m.user.idLong == ctx.jda.selfUser.idLong ->
-                ctx.send("I'd rate me a 110/100!")
+                ctx.send("I'd rate me a **110/100!**")
             m.user.idLong == 173529942431236096L && ctx.author.idLong == 173529942431236096L ->
-                ctx.send("Hitoccchi, I'd rate you a 100/100!")
+                ctx.send("Hitoccchi, I'd rate you a **100/100!**")
             m.user.idLong == 173529942431236096L ->
-                ctx.send("I'd rate hitoccchi a 100/100!")
+                ctx.send("I'd rate hitoccchi a **100/100!**")
             m.user.idLong == ctx.author.idLong ->
                 ctx.send("I'd rate you a **${r.nextInt(90 - 1) + 11} / 100**")
             else -> {
