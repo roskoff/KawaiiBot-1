@@ -1,7 +1,7 @@
 package me.alexflipnote.kawaiibot.utils
 
 import me.alexflipnote.kawaiibot.extensions.json
-import me.alexflipnote.kawaiibot.extensions.thenException
+import okhttp3.Response
 import org.json.JSONArray
 import org.json.JSONObject
 import java.util.concurrent.CompletableFuture

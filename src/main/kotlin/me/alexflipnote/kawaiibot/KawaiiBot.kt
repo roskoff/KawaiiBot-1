@@ -18,7 +18,8 @@ object KawaiiBot {
 
     const val version = "3.2.1"
     private val bootTime = System.currentTimeMillis()
-    val developerIds = setOf(86477779717066752L, 180093157554388993L, 261912303132344320L, 115076505549144067L)
+    //                          hitoccchi               rodg                myth
+    val developerIds = setOf(173529942431236096L, 184038953920233472L, 133736400385212416L)
     var LOG = LoggerFactory.getLogger("KawaiiBot")
 
     val config = Properties()

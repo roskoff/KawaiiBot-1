@@ -1,7 +1,7 @@
 package me.alexflipnote.kawaiibot.commands
 
 import me.alexflipnote.kawaiibot.utils.NekosLife
-import me.alexflipnote.kawaiibot.KawaiiBot
+import me.alexflipnote.kawaiibot.extensions.thenException
 import me.aurieh.ichigo.core.CommandContext
 import me.aurieh.ichigo.core.ICommand
 import me.aurieh.ichigo.core.annotations.Command
