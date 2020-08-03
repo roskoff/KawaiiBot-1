@@ -1,4 +1,3 @@
-token=beepboop
+token=
 prefix=+
-api_url=http://api
-api_token=nevergonnagivethis
+api_url=http://api.alexflipnote.dev
