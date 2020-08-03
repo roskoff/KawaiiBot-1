@@ -20,11 +20,11 @@ class F : ICommand {
         }
 
         val m = ctx.args.asMember
-        
+
         if(m!=null){
             ctx.send("**${ctx.author.name}** has paid their respects for **${m.effectiveName.clean()}** $heart")
         }else{
-            ctx.send("**${ctx.author.name}** has paid their respects for **${StringUtil.cleanerContent(reason)}** $heart")
+            ctx.send("**${ctx.author.name}** has paid their respects for **${StringUtil.cleanerContent(ctx.argString)}** $heart")
         }
 
     }
