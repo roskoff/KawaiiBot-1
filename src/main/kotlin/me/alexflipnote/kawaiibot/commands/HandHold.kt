@@ -26,7 +26,7 @@ class HandHold : ICommand {
             m.user.idLong == ctx.author.idLong ->
                 ctx.send("Sorry to see you alone ;-;")
             else -> {
-                val res=Helper.chooseRandom(handholdURLs)
+                val res=Helpers.chooseRandom(handholdURLs)
                 ctx.send("**${m.effectiveName.clean()}**, **${ctx.author.name}** is holding your hand\n$res")
             }
         }

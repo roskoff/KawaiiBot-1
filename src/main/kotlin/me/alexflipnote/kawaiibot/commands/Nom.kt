@@ -13,8 +13,7 @@ import net.dv8tion.jda.core.Permission
 class Nom : ICommand {
 
     private val nomURLs = arrayOf("https://cdn.weeb.sh/images/rynfK0DTW.gif", "https://cdn.weeb.sh/images/SkeUEAvTW.gif", "https://cdn.weeb.sh/images/SyI7yJKw-.gif",
-                                    "https://cdn.weeb.sh/images/BJSf1JFDZ.gif", "https://cdn.weeb.sh/images/SyLfyJtvb.gif", "https://cdn.weeb.sh/images/HJ_RAAuvb.gif",
-                                    )
+                                    "https://cdn.weeb.sh/images/BJSf1JFDZ.gif", "https://cdn.weeb.sh/images/SyLfyJtvb.gif", "https://cdn.weeb.sh/images/HJ_RAAuvb.gif")
 
     override fun run(ctx: CommandContext) {
         val m = ctx.args.asMember
