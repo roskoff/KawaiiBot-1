@@ -11,6 +11,8 @@ import net.dv8tion.jda.core.Permission
 
 @Command(description = "Bite someone :3c", botPermissions = [Permission.MESSAGE_EMBED_LINKS, Permission.MESSAGE_ATTACH_FILES])
 class Bite : ICommand {
+
+    private val biteURLs = arrayOf("https://cdn.weeb.sh/images/H1_Jbemjb.gif", "https://cdn.weeb.sh/images/rkNgZlXi-.gif", "https://cdn.weeb.sh/images/rkakblmiZ.gif")
     override fun run(ctx: CommandContext) {
         val m = ctx.args.asMember
 
@@ -23,8 +25,8 @@ class Bite : ICommand {
                 ctx.send("W-Why would you want to bite yourself...?")
             }
             else -> {
-                //TODO: implement bite
-                ctx.send("**${m.effectiveName.clean()}**, you were bitten by **${ctx.author.name}**")
+                val res=Helpers.chooseRandom(biteURLs)
+                ctx.send("**${m.effectiveName.clean()}**, you were bitten by **${ctx.author.name}**\n$res")
             }
         }
     }

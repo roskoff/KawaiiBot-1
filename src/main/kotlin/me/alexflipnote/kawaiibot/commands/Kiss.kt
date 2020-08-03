@@ -23,7 +23,6 @@ class Kiss : ICommand {
             m.user.idLong == ctx.author.idLong ->
                 ctx.send("Sorry to see you alone ;-;")
             else -> {
-                //TODO: Implement kiss
                 RequestUtil.get("https://api.nekos.dev/api/v3/images/sfw/gif/kiss").thenAccept {
                     val res = it.json()?.getJSONObject("data")?.getJSONObject("response")?.getString("url") ?: ""
                     ctx.send("**${m.effectiveName.clean()}**,you got a kiss from **${ctx.author.name}**\n$res")
