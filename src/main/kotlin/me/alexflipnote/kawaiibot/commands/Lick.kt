@@ -12,6 +12,12 @@ import net.dv8tion.jda.core.MessageBuilder
 @Command(description = "Lick someone o////o", botPermissions = [Permission.MESSAGE_EMBED_LINKS])
 class Lick : ICommand {
 
+    private val lickURLs = arrayOf("https://cdn.weeb.sh/images/S1Ill0_vW.gif", "https://cdn.weeb.sh/images/S1Ill0_vW.gif", "https://cdn.weeb.sh/images/S1Ill0_vW.gif",
+                                    "https://cdn.weeb.sh/images/S1Ill0_vW.gif", "https://cdn.weeb.sh/images/Sk15iVlOf.gif", "https://cdn.weeb.sh/images/S1Ill0_vW.gif",
+                                    "https://cdn.weeb.sh/images/H13HS7S6-.gif", "https://cdn.weeb.sh/images/Sk7xeAdwb.gif", "https://cdn.weeb.sh/images/rykRHmB6W.gif",
+                                    "https://cdn.weeb.sh/images/rkBbBQS6W.gif", "https://cdn.weeb.sh/images/Hkknfs2Ab.gif", "https://cdn.weeb.sh/images/HJRRyAuP-.gif",
+                                    "https://cdn.weeb.sh/images/S1QzRJp7z.gif", "https://cdn.weeb.sh/images/S1Ill0_vW.gif", "https://cdn.weeb.sh/images/S1Ill0_vW.gif")
+
     override fun run(ctx: CommandContext) {
         val m = ctx.args.asMember
 
@@ -25,8 +31,8 @@ class Lick : ICommand {
             m.user.idLong == ctx.author.idLong ->
                 ctx.channel.sendFile(Helpers.getImageStream("images/selflick.gif"), "selflick.gif").queue()
             else -> {
-                //TODO: Implement lick
-                ctx.send("**${m.effectiveName.clean()}**, was licked by **${ctx.author.name}**")
+                val res = Helpers.chooseRandom(lickURLs)
+                ctx.send("**${m.effectiveName.clean()}**, was licked by **${ctx.author.name}**\n$res")
             }
         }
     }

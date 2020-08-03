@@ -21,7 +21,6 @@ class Tickle : ICommand {
         } else if (m.user.idLong == ctx.jda.selfUser.idLong) {
             ctx.send("*giggles* ❤")
         } else {
-            //TODO: Implement tickle
             RequestUtil.get("https://api.nekos.dev/api/v3/images/sfw/gif/tickle").thenAccept {
                 val res = it.json()?.getJSONObject("data")?.getJSONObject("response")?.getString("url") ?: ""
                 ctx.send("**${m.effectiveName.clean()}**, you got tickled by **${ctx.author.name}**\n$res")
