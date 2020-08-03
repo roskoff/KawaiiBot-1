@@ -1,3 +1,16 @@
-token=
+# Discord bot token (highly sensitive, DO NOT COMMIT).
+token=asdfadfasf
+
+# Global prefix for commands (i.e.: +hug @FatherServo).
 prefix=+
-api_url=https://api.alexflipnote.dev
+
+# External API url, highly coupled with AlexFlipnote's API.
+# Commands that implements AbstractAPICommand use it.
+api_url=http://api.alexflipnote.dev
+
+# Weeb.sh toke (it its a Wolke token type, hence the name).
+wolke=asdfasf
+
+# Undocumented/Unused, didn't find any references in project
+# for this property.
+api_token=nevergonnagivethis
