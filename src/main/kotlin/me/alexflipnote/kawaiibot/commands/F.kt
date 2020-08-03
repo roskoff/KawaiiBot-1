@@ -14,7 +14,12 @@ class F : ICommand {
         val heart = Helpers.chooseRandom(hearts)
         val reason = ctx.args.collect()
         if (!reason.isEmpty()) {
-            ctx.send("**${ctx.author.name}** has paid their respects for **${StringUtil.cleanerContent(reason)}** $heart")
+            val m = ctx.args.asMember
+            if(m!=null){
+                ctx.send("**${ctx.author.name}** has paid their respects for **${m.effectiveName.clean()}** $heart")
+            }else{
+                ctx.send("**${ctx.author.name}** has paid their respects for **${StringUtil.cleanerContent(reason)}** $heart")
+            }
         } else {
             ctx.send("**${ctx.author.name}** has paid their respects $heart")
         }
