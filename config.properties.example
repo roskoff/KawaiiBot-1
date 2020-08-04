@@ -8,9 +8,6 @@ prefix=+
 # Commands that implements AbstractAPICommand use it.
 api_url=http://api.alexflipnote.dev
 
-# Weeb.sh token (it is a Wolke token type, hence the name).
-wolke=asdfasf
-
 # Undocumented/Unused, didn't find any references in project
 # for this property.
 api_token=nevergonnagivethis
